@@ -6,11 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76c2470e-ad88-4219-b8ef-42e2d8f433be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sqls/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="76c2470e-ad88-4219-b8ef-42e2d8f433be" name="Default Changelist" comment="新加测试文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/sqls/test.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="6" selection-start-column="6" selection-end-column="6" />
+              <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -229,16 +225,23 @@
       <option name="presentableId" value="Default" />
       <updated>1557992774501</updated>
       <workItem from="1557992778487" duration="750000" />
-      <workItem from="1557995390146" duration="1160000" />
+      <workItem from="1557995390146" duration="1406000" />
     </task>
+    <task id="LOCAL-00001" summary="新加测试文件">
+      <created>1557996770074</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557996770074</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1910000" />
+    <option name="totallyTimeSpent" value="2156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="943" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="FindBugs-IDEA" />
@@ -284,6 +287,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="新加测试文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="新加测试文件" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/sqls/使用说明.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -302,7 +309,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/sqls/test.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
