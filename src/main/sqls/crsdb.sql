@@ -21,7 +21,7 @@ USE `crsdb`;
 DROP TABLE IF EXISTS `cour_class`;
 
 CREATE TABLE `cour_class` (
-  `cId` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `cId` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '课程号',
   `className` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '班级名称',
   `cWeek` varchar(20) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '周几上该课',
   `cSession` varchar(10) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '节次',
@@ -30,18 +30,22 @@ CREATE TABLE `cour_class` (
 
 /*Data for the table `cour_class` */
 
+insert  into `cour_class`(`cId`,`className`,`cWeek`,`cSession`,`tId`) values ('2015001','物联网班','周一','一二节','2010001');
+
 /*Table structure for table `course` */
 
 DROP TABLE IF EXISTS `course`;
 
 CREATE TABLE `course` (
-  `cId` varchar(50) NOT NULL,
+  `cId` varchar(50) NOT NULL COMMENT '课程号',
   `courseName` varchar(50) DEFAULT NULL COMMENT '课程名称',
   `classRoomName` varchar(30) DEFAULT NULL COMMENT '上课教室',
   PRIMARY KEY (`cId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `course` */
+
+insert  into `course`(`cId`,`courseName`,`classRoomName`) values ('2015001','计算机网络','B108');
 
 /*Table structure for table `student` */
 
@@ -58,6 +62,8 @@ CREATE TABLE `student` (
 
 /*Data for the table `student` */
 
+insert  into `student`(`sId`,`sName`,`className`,`sWechatId`,`particiCnt`) values ('2015101222','魏鹏程','物联网',NULL,0);
+
 /*Table structure for table `teacher` */
 
 DROP TABLE IF EXISTS `teacher`;
@@ -65,11 +71,13 @@ DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher` (
   `tId` varchar(20) NOT NULL,
   `tName` varchar(50) DEFAULT NULL,
-  `tWechatId` varchar(50) DEFAULT NULL,
+  `tWechatId` varchar(50) DEFAULT NULL COMMENT '教师微信号',
   PRIMARY KEY (`tId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `teacher` */
+
+insert  into `teacher`(`tId`,`tName`,`tWechatId`) values ('2010001','波涛',NULL);
 
 /*Table structure for table `u_permission` */
 
@@ -127,11 +135,11 @@ CREATE TABLE `u_user` (
   `last_login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
   `status` bigint(1) DEFAULT '1' COMMENT '1:有效，0:禁止登录',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 /*Data for the table `u_user` */
 
-insert  into `u_user`(`id`,`nickname`,`email`,`pswd`,`create_time`,`last_login_time`,`status`) values (1,'管理员','admin','57eb72e6b78a87a12d46a7f5e9315138','2016-06-16 11:15:33','2016-06-16 11:24:10',1),(11,'soso','8446666@qq.com','d57ffbe486910dd5b26d0167d034f9ad','2016-05-26 20:50:54','2016-06-16 11:24:35',1),(12,'8446666','8446666','4afdc875a67a55528c224ce088be2ab8','2016-05-27 22:34:19','2016-06-15 17:03:16',1);
+insert  into `u_user`(`id`,`nickname`,`email`,`pswd`,`create_time`,`last_login_time`,`status`) values (1,'管理员','admin','57eb72e6b78a87a12d46a7f5e9315138','2016-06-16 11:15:33','2019-05-19 19:20:47',1),(11,'soso','8446666@qq.com','d57ffbe486910dd5b26d0167d034f9ad','2016-05-26 20:50:54','2016-06-16 11:24:35',1),(12,'8446666','8446666','4afdc875a67a55528c224ce088be2ab8','2016-05-27 22:34:19','2016-06-15 17:03:16',1);
 
 /*Table structure for table `u_user_role` */
 
