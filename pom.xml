@@ -351,8 +351,14 @@
 			<artifactId>jackson-core-asl</artifactId>
 			<version>1.9.2</version>
 		</dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations-java5</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
 
-		<!-- /Spring 升级4+ 依赖的JSON包 -->
+        <!-- /Spring 升级4+ 依赖的JSON包 -->
 
 
 	</dependencies>

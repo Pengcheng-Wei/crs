@@ -42,6 +42,9 @@
 			</div>
 			<#--/row-->
 		</div>
-			
+	<form method="get" action="${basePath}/student/queryById.shtml">
+		<input name="id">
+		<button type="submit">提交</button>
+	</form>
 	</body>
 </html>
