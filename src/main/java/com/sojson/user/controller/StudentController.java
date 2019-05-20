@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Scope(value="prototype")
 @RequestMapping(value = "student")
 public class StudentController {
-
+    final String role_student = "student";
     @Autowired
     StudentService studentService;
 
@@ -31,5 +31,15 @@ public class StudentController {
         map.put("student", student);
         student.toString();
         return student;
+    }
+
+
+    @RequestMapping(value = "updateById")
+    public void updateById(String id, String openid, String role){
+        if (role == role_student){
+
+            studentService.updateById(id, openid, role);
+        }
+
     }
 }

@@ -119,10 +119,10 @@ public class UserLoginController extends BaseController {
 	 */
 	@RequestMapping(value="submitLogin",method=RequestMethod.POST)
 	@ResponseBody
-	public Map<String,Object> submitLogin(UUser entity,Boolean rememberMe,HttpServletRequest request){
-		
+	public Map<String,Object> submitLogin(UUser entity,Boolean rememberMe,HttpServletRequest request, String email){
 		try {
 			entity = TokenManager.login(entity,rememberMe);
+			System.out.println(entity.getNickname()+"\n");
 			resultMap.put("status", 200);
 			resultMap.put("message", "登录成功");
 			

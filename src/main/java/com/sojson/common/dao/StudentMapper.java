@@ -13,4 +13,12 @@ public interface StudentMapper {
      * @return 返回根据学生Id查询到的对象
      */
     Student queryById(@Param("id") String id);
+
+    /**
+     * 根据id更新该学生的微信号（openid）
+     * @param id
+     * @param openid
+     */
+    void updateById(@Param("id") String id, @Param("openid") String openid);
+
 }

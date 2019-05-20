@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentServiceImpl implements StudentService {
 
+
     @Autowired
     StudentMapper studentMapper;
     @Override
@@ -19,6 +20,8 @@ public class StudentServiceImpl implements StudentService {
         return studentMapper.queryById(id);
     }
 
-
-
+    @Override
+    public void updateById(String id, String openid, String role) {
+        studentMapper.updateById(id, openid);
+    }
 }
