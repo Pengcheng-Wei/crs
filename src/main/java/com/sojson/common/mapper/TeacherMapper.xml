@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sojson.common.dao.TeacherMapper" >
+
+    <select id="queryById" resultType="com.sojson.common.model.Teacher">
+        select * from teacher where tId = #{id}
+    </select>
+
+  
+  <update id="updateById">
+      UPDATE teacher SET tWechatId =' ${openid} 'WHERE tId = '${id}';
+  </update>
+  
+  
+  
+  
+  
+
+
+</mapper>

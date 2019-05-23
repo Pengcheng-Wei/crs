@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -34,9 +35,10 @@ public class StudentController {
     }
 
 
-    @RequestMapping(value = "updateById")
+    @RequestMapping(value = "updateById", method = RequestMethod.GET)
     public void updateById(String id, String openid, String role){
-        if (role == role_student){
+        System.out.println("跟新数据库了");
+        if (role.equals(role_student) ){
 
             studentService.updateById(id, openid, role);
         }

@@ -1,31 +1,30 @@
 package com.sojson.user.controller;
 
-import java.util.Date;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
-import net.sf.json.JSONObject;
-
-import org.apache.shiro.authc.DisabledAccountException;
-import org.apache.shiro.web.util.SavedRequest;
-import org.apache.shiro.web.util.WebUtils;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.sojson.common.controller.BaseController;
 import com.sojson.common.model.UUser;
 import com.sojson.common.utils.LoggerUtils;
 import com.sojson.common.utils.StringUtils;
 import com.sojson.common.utils.VerifyCodeUtils;
 import com.sojson.core.shiro.token.manager.TokenManager;
+import com.sojson.crs.service.TeacherService;
 import com.sojson.user.manager.UserManager;
 import com.sojson.user.service.UUserService;
+import net.sf.json.JSONObject;
+import org.apache.shiro.authc.DisabledAccountException;
+import org.apache.shiro.web.util.SavedRequest;
+import org.apache.shiro.web.util.WebUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+import com.sojson.crs.service.StudentService;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
+import java.util.Map;
 
 /**
  * 
@@ -54,7 +53,13 @@ public class UserLoginController extends BaseController {
 
 	@Resource
 	UUserService userService;
-	
+
+	@Autowired
+	StudentService studentService;
+	@Autowired
+	TeacherService teacherService;
+	final String role_student = "student";
+	final String role_teacher = "teacher";
 	/**
 	 * 登录跳转
 	 * @return
@@ -119,14 +124,25 @@ public class UserLoginController extends BaseController {
 	 */
 	@RequestMapping(value="submitLogin",method=RequestMethod.POST)
 	@ResponseBody
-	public Map<String,Object> submitLogin(UUser entity,Boolean rememberMe,HttpServletRequest request, String email){
+	public Map<String,Object> submitLogin(UUser entity,Boolean rememberMe,HttpServletRequest request, String role, String openid){
 		try {
 			entity = TokenManager.login(entity,rememberMe);
 			System.out.println(entity.getNickname()+"\n");
 			resultMap.put("status", 200);
 			resultMap.put("message", "登录成功");
-			
-			
+
+			/**
+			 * 实现登录成功后的与微信号绑定，即更新数据库的wechatid字段
+			 */
+			if(role!=null && openid != null){
+                if (role.equals(role_student) ){
+                    studentService.updateById(entity.getEmail(), openid, role);
+                }
+                if (role.equals(role_teacher)){
+                    teacherService.updateById(entity.getEmail(), openid, role);
+                }
+            }
+
 			/**
 			 * shiro 获取登录之前的地址
 			 * 之前0.1版本这个没判断空。

@@ -85,8 +85,9 @@
 			            });
 			            return false;
 			        }
-			        var pswd = MD5(username +"#" + password),
+			        var pswd = password,
 			        	data = {pswd:pswd,email:username,rememberMe:$("#rememberMe").is(':checked')};
+
 			        var load = layer.load();
 			        
 			        $.ajax({

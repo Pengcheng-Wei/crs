@@ -8,9 +8,7 @@
 
   
   <update id="updateById">
-      UPDATE student
-    SET sWechatId = ${openid}
-    WHERE sId = ${id};
+      UPDATE student SET sWechatId =' ${openid} 'WHERE sId = '${id}';
   </update>
   
   
