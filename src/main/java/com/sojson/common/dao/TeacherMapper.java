@@ -2,7 +2,10 @@ package com.sojson.common.dao;
 
 import com.sojson.common.model.Student;
 import com.sojson.common.model.Teacher;
+import com.sojson.common.model.TeacherCourses;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /***
  * @author Allen
@@ -22,4 +25,5 @@ public interface TeacherMapper {
      */
     void updateById(@Param("id") String id, @Param("openid") String openid);
 
+    List<TeacherCourses> queryByIdWeek(@Param(value = "tId")String tId, @Param(value = "week")String week);
 }

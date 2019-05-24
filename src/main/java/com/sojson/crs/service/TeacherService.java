@@ -2,6 +2,10 @@ package com.sojson.crs.service;
 
 
 import com.sojson.common.model.Teacher;
+import com.sojson.common.model.TeacherCourses;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /***
  * @author Allen
@@ -21,4 +25,6 @@ public interface TeacherService {
      * @param role
      */
     void updateById(String id, String openid, String role);
+
+    List<TeacherCourses> queryByIdWeek(String tId, String week);
 }

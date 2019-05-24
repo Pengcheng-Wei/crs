@@ -131,6 +131,8 @@ public class UserLoginController extends BaseController {
 			resultMap.put("status", 200);
 			resultMap.put("message", "登录成功");
 
+			resultMap.put("sessionId", request.getSession().getId());
+			System.out.println(request.getSession().getId());
 			/**
 			 * 实现登录成功后的与微信号绑定，即更新数据库的wechatid字段
 			 */

@@ -10,10 +10,22 @@
   <update id="updateById">
       UPDATE student SET sWechatId =' ${openid} 'WHERE sId = '${id}';
   </update>
+
+    <select id="queryByClassName" resultType="com.sojson.common.model.StudentCourses">
+        SELECT
+       cc.`cSession`, c.`courseName`, c.`classRoomName`, t.`tName`
+        FROM
+      course c,
+      cour_class cc, teacher t
+    WHERE c.`cId` = cc.`cId`
+      AND cc.`className` like "%${className}%"
+      AND cc.`tId` = t.`tId`
+      and cc.cWeek = "${week}";
+    </select>
   
-  
-  
-  
+  <select id="queryByOpenId" resultType="com.sojson.common.model.Student">
+      select * from student where sWechatId = '${openId}'
+  </select>
   
 
 

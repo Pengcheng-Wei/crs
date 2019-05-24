@@ -10,7 +10,14 @@
   <update id="updateById">
       UPDATE teacher SET tWechatId =' ${openid} 'WHERE tId = '${id}';
   </update>
-  
+
+    <select id="queryByIdWeek" resultType="com.sojson.common.model.TeacherCourses">
+        SELECT cc.`cSession`, c.`courseName`, cc.`className`, c.`classRoomName`
+         FROM cour_class cc, course c
+         WHERE tId = '${tId}'
+         AND cc.`cId` = c.`cId`
+         And cc.cWeek = '${week}';
+    </select>
   
   
   

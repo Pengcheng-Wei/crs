@@ -29,8 +29,8 @@ public class UserManager {
 	 * @return
 	 */
 	public static String md5Pswd(String email ,String pswd){
-		pswd = String.format("%s#%s", email,pswd);
-		pswd = MathUtil.getMD5(pswd);
+		//pswd = String.format("%s#%s", email,pswd);
+		//pswd = MathUtil.getMD5(pswd);
 		return pswd;
 	}
 	/**
