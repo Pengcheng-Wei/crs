@@ -30,7 +30,7 @@ CREATE TABLE `cour_class` (
 
 /*Data for the table `cour_class` */
 
-insert  into `cour_class`(`cId`,`className`,`cWeek`,`cSession`,`tId`) values ('2015001','物联网班','周一','一二节','2010001');
+insert  into `cour_class`(`cId`,`className`,`cWeek`,`cSession`,`tId`) values ('2015001','物联网班、软件外包班','周一','一二节','2010001'),('2015002','物联网班','周一','三四节','2010002'),('2015003','物联网班','周一','五六节','2010003'),('2015001','普本班','周一','五六节','2010001');
 
 /*Table structure for table `course` */
 
@@ -45,7 +45,7 @@ CREATE TABLE `course` (
 
 /*Data for the table `course` */
 
-insert  into `course`(`cId`,`courseName`,`classRoomName`) values ('2015001','计算机网络','B108');
+insert  into `course`(`cId`,`courseName`,`classRoomName`) values ('2015001','计算机网络','B108'),('2015002','计算机组成原理','B125'),('2015003','数据结构','A107');
 
 /*Table structure for table `student` */
 
@@ -55,14 +55,14 @@ CREATE TABLE `student` (
   `sId` varchar(20) NOT NULL,
   `sName` varchar(30) DEFAULT NULL,
   `className` varchar(50) DEFAULT NULL COMMENT '班级名称',
-  `sWechatId` varchar(50) DEFAULT NULL COMMENT '微信Id',
+  `sWechatId` varchar(100) DEFAULT NULL COMMENT '微信Id',
   `particiCnt` int(11) DEFAULT '0' COMMENT '缺课次数',
   PRIMARY KEY (`sId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `student` */
 
-insert  into `student`(`sId`,`sName`,`className`,`sWechatId`,`particiCnt`) values ('2015101222','魏鹏程','物联网',NULL,0);
+insert  into `student`(`sId`,`sName`,`className`,`sWechatId`,`particiCnt`) values ('2015101111','张飞','软件外包班',NULL,0),('2015101222','魏鹏程','物联网班','oZrVJ5ChGbaeWKeo_LdFwT4mh_h8',0),('2015101333','关羽','软件外包班',NULL,0),('2015101444','赵云','软件外包班',NULL,0),('2015101555','诸葛亮','软件外包班',NULL,0),('2015101666','刘备','软件外包班',NULL,0);
 
 /*Table structure for table `teacher` */
 
@@ -77,7 +77,7 @@ CREATE TABLE `teacher` (
 
 /*Data for the table `teacher` */
 
-insert  into `teacher`(`tId`,`tName`,`tWechatId`) values ('2010001','波涛',NULL);
+insert  into `teacher`(`tId`,`tName`,`tWechatId`) values ('2010001','波涛',' oZrVJ5ChGbaeWKeo_LdFwT4mh_h8 '),('2010002','江河',NULL),('2010003','大海',NULL);
 
 /*Table structure for table `u_permission` */
 
@@ -120,7 +120,7 @@ CREATE TABLE `u_role_permission` (
 
 /*Data for the table `u_role_permission` */
 
-insert  into `u_role_permission`(`rid`,`pid`) values (4,8),(4,9),(4,10),(4,11),(4,12),(3,4),(3,6),(3,7),(3,13),(3,14),(3,15),(3,16),(3,17),(3,18),(3,19),(3,20),(1,4),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20);
+insert  into `u_role_permission`(`rid`,`pid`) values (1,4),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(4,4),(4,6),(4,7),(4,8),(4,9),(4,10),(4,11),(4,12),(4,13),(4,14),(4,15),(4,16),(4,17),(4,18),(4,19),(4,20),(3,4),(3,6),(3,7),(3,8),(3,9),(3,10),(3,11),(3,12),(3,13),(3,14),(3,15),(3,16),(3,17),(3,18),(3,19),(3,20);
 
 /*Table structure for table `u_user` */
 
@@ -135,11 +135,11 @@ CREATE TABLE `u_user` (
   `last_login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
   `status` bigint(1) DEFAULT '1' COMMENT '1:有效，0:禁止登录',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 /*Data for the table `u_user` */
 
-insert  into `u_user`(`id`,`nickname`,`email`,`pswd`,`create_time`,`last_login_time`,`status`) values (1,'管理员','admin','57eb72e6b78a87a12d46a7f5e9315138','2016-06-16 11:15:33','2019-05-19 19:20:47',1),(11,'soso','8446666@qq.com','d57ffbe486910dd5b26d0167d034f9ad','2016-05-26 20:50:54','2016-06-16 11:24:35',1),(12,'8446666','8446666','4afdc875a67a55528c224ce088be2ab8','2016-05-27 22:34:19','2016-06-15 17:03:16',1);
+insert  into `u_user`(`id`,`nickname`,`email`,`pswd`,`create_time`,`last_login_time`,`status`) values (1,'管理员','admin','admin','2016-06-16 11:15:33','2019-05-24 16:36:35',1),(11,'soso','8446666@qq.com','d57ffbe486910dd5b26d0167d034f9ad','2016-05-26 20:50:54','2016-06-16 11:24:35',1),(12,'8446666','8446666','4afdc875a67a55528c224ce088be2ab8','2016-05-27 22:34:19','2016-06-15 17:03:16',1),(13,'魏鹏程','2015101222','2015101222','2019-05-20 16:15:21','2019-05-24 19:36:39',1),(14,'波涛','2010001','2010001','2019-05-23 15:02:16','2019-05-23 15:19:34',1),(15,'江河','2010002','2010002','2019-05-23 17:11:59','2019-05-23 17:11:59',1),(16,'大海','2010003','2010003','2019-05-23 17:20:24','2019-05-23 17:20:24',1),(17,'张飞','2015101111','2015101111','2019-05-23 17:22:26','2019-05-23 17:22:26',1),(18,'关羽','2015101333','2015101333','2019-05-23 17:22:58','2019-05-23 17:22:58',1),(19,'赵云','2015101444','2015101444','2019-05-23 17:23:32','2019-05-23 17:23:32',1),(20,'诸葛亮','2015101555','2015101555','2019-05-23 17:24:05','2019-05-23 17:24:05',1),(21,'刘备','2015101666','2015101666','2019-05-23 17:24:40','2019-05-23 17:24:40',1);
 
 /*Table structure for table `u_user_role` */
 
@@ -152,7 +152,7 @@ CREATE TABLE `u_user_role` (
 
 /*Data for the table `u_user_role` */
 
-insert  into `u_user_role`(`uid`,`rid`) values (12,4),(11,3),(11,4),(1,1);
+insert  into `u_user_role`(`uid`,`rid`) values (12,4),(11,3),(11,4),(1,1),(13,1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
