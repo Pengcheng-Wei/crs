@@ -74,7 +74,14 @@ public class StudentController {
 
         return map;
     }
-
+    @RequestMapping(value = "checkRandomNum")
+    @ResponseBody
+    public Map<String,Object> checkRandomNum(String tId, String sId, int randomNum){
+        Map<String, Object> map = new HashMap<>();
+        boolean result = studentService.updateIsChecked("t"+tId, sId, randomNum);
+        map.put("result", result);
+        return map;
+    }
 
 
 

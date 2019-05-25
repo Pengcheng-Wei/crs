@@ -18,6 +18,31 @@
          AND cc.`cId` = c.`cId`
          And cc.cWeek = '${week}';
     </select>
+
+    <update id="createNewTable" parameterType="String">
+		create table ${tableName} (
+							sId int,
+							sName varchar (50),
+							className varchar(55),
+							isChecked int)
+	</update>
+
+    <update id="dropTable">
+		drop table ${tableName}
+	</update>
+
+    <insert id="insertStudent">
+        insert into ${tableName} (sId, sName, className, isChecked)
+        values (${sId}, '${sName}', '${className}', ${isChecked})
+    </insert>
+
+    <select id="queryStudents" resultType="integer">
+        SELECT COUNT(*) FROM ${tableName} WHERE isChecked = 1;
+    </select>
+
+
+
+
   
   
   

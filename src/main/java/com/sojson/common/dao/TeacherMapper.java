@@ -26,4 +26,12 @@ public interface TeacherMapper {
     void updateById(@Param("id") String id, @Param("openid") String openid);
 
     List<TeacherCourses> queryByIdWeek(@Param(value = "tId")String tId, @Param(value = "week")String week);
+
+    int createNewTable(@Param("tableName") String tableName);
+
+    int dropTable(@Param("tableName") String tableName);
+
+    void insertStudent(@Param(value = "sId")String sId, @Param(value = "sName")String sName, @Param(value = "className")String className, @Param(value = "isChecked")int isChecked, @Param(value = "tableName")String tableName);
+
+    int queryStudents(@Param(value = "tableName") String tableName);
 }

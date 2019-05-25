@@ -38,5 +38,5 @@ public interface StudentService {
      * @return
      */
     Student queryByOpenId(String openid);
-
+    boolean updateIsChecked(String tableName, String sId,int randomNum);
 }

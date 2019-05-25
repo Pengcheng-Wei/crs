@@ -27,4 +27,7 @@ public interface TeacherService {
     void updateById(String id, String openid, String role);
 
     List<TeacherCourses> queryByIdWeek(String tId, String week);
+
+    int calling(String tId, String className);
+    int queryStudents(String tId);
 }

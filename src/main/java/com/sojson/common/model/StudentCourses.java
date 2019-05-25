@@ -5,6 +5,15 @@ public class StudentCourses {
     private String courseName;
     private String classRoomName;
     private String tName;
+    private String tId;
+
+    public String gettId() {
+        return tId;
+    }
+
+    public void settId(String tId) {
+        this.tId = tId;
+    }
 
     public String getcSession() {
         return cSession;

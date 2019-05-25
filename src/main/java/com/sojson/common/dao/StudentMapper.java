@@ -39,4 +39,9 @@ public interface StudentMapper {
      */
     List<StudentCourses> queryByClassName(@Param("className")String className, @Param("week") String week);
 
+    List<Student> queryByClassNameForT(@Param(value = "className")String className);
+
+
+    void updateIsChecked(@Param(value = "tableName")String tableName, @Param(value = "sId")String sId);
+
 }

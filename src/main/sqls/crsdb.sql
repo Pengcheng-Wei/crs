@@ -64,6 +64,21 @@ CREATE TABLE `student` (
 
 insert  into `student`(`sId`,`sName`,`className`,`sWechatId`,`particiCnt`) values ('2015101111','张飞','软件外包班',NULL,0),('2015101222','魏鹏程','物联网班','oZrVJ5ChGbaeWKeo_LdFwT4mh_h8',0),('2015101333','关羽','软件外包班',NULL,0),('2015101444','赵云','软件外包班',NULL,0),('2015101555','诸葛亮','软件外包班',NULL,0),('2015101666','刘备','软件外包班',NULL,0);
 
+/*Table structure for table `t2010001` */
+
+DROP TABLE IF EXISTS `t2010001`;
+
+CREATE TABLE `t2010001` (
+  `sId` int(11) DEFAULT NULL,
+  `sName` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `className` varchar(55) COLLATE utf8mb4_bin DEFAULT NULL,
+  `isChecked` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+/*Data for the table `t2010001` */
+
+insert  into `t2010001`(`sId`,`sName`,`className`,`isChecked`) values (2015101222,'魏鹏程','物联网班',1),(2015101111,'张飞','软件外包班',0),(2015101333,'关羽','软件外包班',0),(2015101444,'赵云','软件外包班',0),(2015101555,'诸葛亮','软件外包班',0),(2015101666,'刘备','软件外包班',0);
+
 /*Table structure for table `teacher` */
 
 DROP TABLE IF EXISTS `teacher`;
