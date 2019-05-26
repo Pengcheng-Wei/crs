@@ -8,7 +8,7 @@
 
   
   <update id="updateById">
-      UPDATE student SET sWechatId =' ${openid} 'WHERE sId = '${id}';
+      UPDATE student SET sWechatId ='${openid}'WHERE sId = '${id}';
   </update>
 
     <select id="queryByClassName" resultType="com.sojson.common.model.StudentCourses">

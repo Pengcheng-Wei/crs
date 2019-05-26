@@ -1,6 +1,7 @@
 package com.sojson.user.controller;
 
 
+import com.sojson.common.model.Student;
 import com.sojson.common.model.Teacher;
 import com.sojson.common.model.TeacherCourses;
 import com.sojson.crs.service.TeacherService;
@@ -25,6 +26,7 @@ import java.util.Map;
 @RequestMapping(value = "teacher")
 public class TeacherController {
     public static int randomNum;
+    public static int isFineshed;
     @Autowired
     TeacherService teacherService;
 
@@ -58,6 +60,41 @@ public class TeacherController {
         int currentCnt = teacherService.queryStudents(tId);
         map.put("currentCnt", currentCnt);
         return map;
+    }
+
+    @RequestMapping(value = "checkResult")
+    @ResponseBody
+    public Map<String,Object> checkResult(String tId){
+        Map<String, Object> map = new HashMap<>();
+        List<Student> ls = teacherService.checkResult(tId);
+        map.put("students", ls);
+
+        return map;
+    }
+
+    @RequestMapping(value = "updateResign")
+    @ResponseBody
+    public void updateResign(String tId,String sId){
+        teacherService.updateResign(sId, tId);
+    }
+
+    @RequestMapping(value = "finishCalling")
+    @ResponseBody
+    public void finishCalling(int flag){
+        if (flag == 1){
+            isFineshed = 1;
+        }
+        else{
+            isFineshed = 0;
+        }
+
+    }
+
+    @RequestMapping(value = "updateParticiCnt")
+    @ResponseBody
+    public void updateParticiCnt(String tId){
+        teacherService.updateParticiCnt(tId);
+
     }
 
 

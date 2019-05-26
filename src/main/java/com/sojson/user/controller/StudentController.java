@@ -4,8 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.sojson.common.model.Student;
 import com.sojson.common.model.StudentCourses;
+import com.sojson.common.model.Teacher;
 import com.sojson.common.utils.HttpRequestUtil;
 import com.sojson.crs.service.StudentService;
+import com.sojson.crs.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -32,6 +34,9 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
+    @Autowired
+    TeacherService teacherService;
+
 
     @RequestMapping(value = "studentQueryCourses")
     @ResponseBody
@@ -48,7 +53,7 @@ public class StudentController {
 
     @RequestMapping(value = "testController")
     @ResponseBody
-    public Map<String,Object> testController(String js_code, HttpServletRequest request){
+    public Map<String,Object> testController(String js_code){
         final String appid = "wx15764070fee38012";
         final String secret = "3208ddfe27dab73e3504a5ccfddf1222";
         final String grant_type = "authorization_code";
@@ -61,16 +66,20 @@ public class StudentController {
         System.out.println("openid = " + openid);
 
         Student stu = studentService.queryByOpenId(openid);
-        if(stu != null){
-            map.put("bind", "ture");
+        Teacher tea = teacherService.queryByOpenid(openid);
+        if(stu != null ){
+            map.put("bind", "true");
             map.put("student", stu);
+        }
+        else if(tea != null){
+            map.put("bind", "true");
+            map.put("teacher", tea);
         }
         else{
             map.put("bind", "false");
         }
 
         map.put("openid", openid);
-        map.put("sessionId", request.getSession().getId());
 
         return map;
     }
@@ -78,6 +87,7 @@ public class StudentController {
     @ResponseBody
     public Map<String,Object> checkRandomNum(String tId, String sId, int randomNum){
         Map<String, Object> map = new HashMap<>();
+
         boolean result = studentService.updateIsChecked("t"+tId, sId, randomNum);
         map.put("result", result);
         return map;

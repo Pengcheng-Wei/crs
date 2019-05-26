@@ -43,6 +43,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public boolean updateIsChecked(String tableName, String sId, int randomNum) {
         int testNum = 1234;
+        if (TeacherController.isFineshed == 1){
+            return false;
+        }
+
         if(TeacherController.randomNum != 0){
             if (TeacherController.randomNum == randomNum){
                 studentMapper.updateIsChecked(tableName, sId);

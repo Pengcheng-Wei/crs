@@ -1,6 +1,7 @@
 package com.sojson.crs.service;
 
 
+import com.sojson.common.model.Student;
 import com.sojson.common.model.Teacher;
 import com.sojson.common.model.TeacherCourses;
 import org.apache.ibatis.annotations.Param;
@@ -30,4 +31,10 @@ public interface TeacherService {
 
     int calling(String tId, String className);
     int queryStudents(String tId);
+    List<Student> checkResult(String tId);
+
+    void updateResign(String sId, String tId);
+    Teacher queryByOpenid(String openid);
+
+    void updateParticiCnt(String tId);
 }

@@ -50,17 +50,22 @@ public class TeacherServiceImpl implements TeacherService {
         int cnt;
         List<Student> students = new ArrayList<>();
         String tableName = "t"+tId;
-        teacherMapper.createNewTable(tableName);
 
+        int ifExsit = teacherMapper.existTable(tableName);
         for (int i = 0; i < classNames.length; i++) {
             students.addAll(studentMapper.queryByClassNameForT(classNames[i]));
         }
         cnt = students.size();
-        for (int i = 0; i < students.size(); i++) {
-            Student s = students.get(i);
-            teacherMapper.insertStudent(s.getsId(), s.getsName(), s.getClassName(), 0, tableName);
+        if (ifExsit == 0)
+        {
+            teacherMapper.createNewTable(tableName);
+
+            for (int i = 0; i < students.size(); i++) {
+                Student s = students.get(i);
+                teacherMapper.insertStudent(s.getsId(), s.getsName(), s.getClassName(), 0, tableName);
+            }
         }
-        System.out.println(TeacherController.randomNum);
+
         return cnt;
     }
 
@@ -68,5 +73,27 @@ public class TeacherServiceImpl implements TeacherService {
     public int queryStudents(String tId) {
         String tableName = "t" + tId;
         return teacherMapper.queryStudents(tableName);
+    }
+
+    @Override
+    public List<Student> checkResult(String tId) {
+        return teacherMapper.checkResult("t"+tId);
+    }
+
+    @Override
+    public void updateResign(String sId, String tId) {
+        teacherMapper.updateResign(sId, "t"+tId);
+    }
+
+    @Override
+    public Teacher queryByOpenid(String openid) {
+        return teacherMapper.queryByOpenid(openid);
+    }
+
+    @Override
+    public void updateParticiCnt(String tId) {
+        String tableName = "t"+tId;
+        teacherMapper.updateParticiCnt(tableName);
+        teacherMapper.dropTable(tableName);
     }
 }

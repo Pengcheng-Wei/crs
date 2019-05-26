@@ -8,7 +8,7 @@
 
   
   <update id="updateById">
-      UPDATE teacher SET tWechatId =' ${openid} 'WHERE tId = '${id}';
+      UPDATE teacher SET tWechatId ='${openid}'WHERE tId = '${id}';
   </update>
 
     <select id="queryByIdWeek" resultType="com.sojson.common.model.TeacherCourses">
@@ -40,6 +40,23 @@
         SELECT COUNT(*) FROM ${tableName} WHERE isChecked = 1;
     </select>
 
+    <select id="checkResult" resultType="com.sojson.common.model.Student">
+        select * from ${tableName} where isChecked = 0
+    </select>
+
+    <update id="updateResign">
+        update ${tableName} set isChecked = 1 where sId = '${sId}'
+    </update>
+    <select id="existTable" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='crsdb' AND TABLE_NAME='${tableName}' ;
+	</select>
+    <select id="queryByOpenid" resultType="com.sojson.common.model.Teacher">
+        select * from teacher where tWechatId = '${openid}'
+    </select>
+
+    <update id="updateParticiCnt">
+        UPDATE student, ${tableName} SET student.particiCnt = student.particiCnt+1 WHERE  ${tableName}.`sId` = student.`sId` AND  ${tableName}.`isChecked` = 0;
+    </update>
 
 
 

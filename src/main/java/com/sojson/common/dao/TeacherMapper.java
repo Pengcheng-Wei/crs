@@ -27,6 +27,7 @@ public interface TeacherMapper {
 
     List<TeacherCourses> queryByIdWeek(@Param(value = "tId")String tId, @Param(value = "week")String week);
 
+    Teacher queryByOpenid(@Param(value = "openid")String openid);
     int createNewTable(@Param("tableName") String tableName);
 
     int dropTable(@Param("tableName") String tableName);
@@ -34,4 +35,12 @@ public interface TeacherMapper {
     void insertStudent(@Param(value = "sId")String sId, @Param(value = "sName")String sName, @Param(value = "className")String className, @Param(value = "isChecked")int isChecked, @Param(value = "tableName")String tableName);
 
     int queryStudents(@Param(value = "tableName") String tableName);
+
+    List<Student> checkResult(@Param(value = "tableName")String tableName);
+
+    void updateResign(@Param(value = "sId")String sId,@Param(value = "tableName")String tableName);
+
+    int existTable(@Param(value = "tableName")String tableName);
+
+    void updateParticiCnt(@Param(value = "tableName")String tableName);
 }
