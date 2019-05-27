@@ -94,7 +94,7 @@ public class TeacherController {
     @ResponseBody
     public void updateParticiCnt(String tId){
         teacherService.updateParticiCnt(tId);
-
+        TeacherController.isFineshed = 0;
     }
 
 
