@@ -1,6 +1,8 @@
 package com.sojson.user.controller;
 
 import com.sojson.common.controller.BaseController;
+import com.sojson.common.model.Student;
+import com.sojson.common.model.Teacher;
 import com.sojson.common.model.UUser;
 import com.sojson.common.utils.LoggerUtils;
 import com.sojson.common.utils.StringUtils;
@@ -125,19 +127,34 @@ public class UserLoginController extends BaseController {
 	@RequestMapping(value="submitLogin",method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String,Object> submitLogin(UUser entity,Boolean rememberMe,HttpServletRequest request, String role, String openid){
+		Student student = null;
+		Teacher teacher = null;
+		if (role.equals(role_student) ){
+			student = studentService.queryById(entity.getEmail());
+		}
+		else if (role.equals(role_teacher)){
+			teacher = teacherService.queryById(entity.getEmail());
+		}
+		if (student == null || teacher == null) {
+			resultMap.put("isExisted", false);
+			return resultMap;
+		}
 		try {
-			entity = TokenManager.login(entity,rememberMe);
-			System.out.println(entity.getNickname()+"\n");
+			entity = TokenManager.login(entity, rememberMe);
+
+
+			resultMap.put("isExisted", true);
 			resultMap.put("status", 200);
 			resultMap.put("message", "登录成功");
 
 			resultMap.put("sessionId", request.getSession().getId());
-			System.out.println(request.getSession().getId());
+
 			/**
 			 * 实现登录成功后的与微信号绑定，即更新数据库的wechatid字段
 			 */
 			if(role!=null && openid != null){
                 if (role.equals(role_student) ){
+
                     studentService.updateById(entity.getEmail(), openid, role);
                 }
                 if (role.equals(role_teacher)){

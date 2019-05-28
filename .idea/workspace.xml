@@ -6,9 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dda7ef9-10e9-4b19-90ce-b9af2aa943b2" name="Default" comment="初步完成所有功能">
+    <list default="true" id="5dda7ef9-10e9-4b19-90ce-b9af2aa943b2" name="Default" comment="修复了不能再次点名的bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sojson/user/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sojson/user/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,10 +23,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/TeacherController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="52" column="19" lean-forward="true" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+            <state relative-caret-position="404">
+              <caret line="135" column="61" lean-forward="true" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,13 +35,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/TeacherService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+            <state relative-caret-position="511">
+              <caret line="87" column="84" lean-forward="true" selection-start-line="87" selection-start-column="84" selection-end-line="87" selection-end-column="84" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/core/shiro/token/manager/TokenManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -49,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/impl/TeacherServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1237">
+            <state relative-caret-position="1750">
               <caret line="93" column="32" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -66,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/impl/StudentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="875">
-              <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+              <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -74,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://D:/repo/org/springframework/spring-aop/4.2.5.RELEASE/spring-aop-4.2.5.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
+            <state relative-caret-position="3550">
               <caret line="173" selection-start-line="173" selection-end-line="173" />
             </state>
           </provider>
@@ -150,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sojson/user/manager/UserManager.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/common/config/top.ftl" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/user/index.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sojson/core/shiro/service/impl/ShiroManagerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sojson/common/utils/HttpRequestUtil.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -169,6 +177,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sojson/crs/service/impl/TeacherServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/shiro_base_auth.ini" />
         <option value="$PROJECT_DIR$/src/main/java/com/sojson/user/controller/TeacherController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java" />
       </list>
     </option>
   </component>
@@ -202,7 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,60 +261,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="sojson" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sojson" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sojson" type="462c0819:PsiDirectoryNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sojson" type="462c0819:PsiDirectoryNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sojson" type="462c0819:PsiDirectoryNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sojson" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -320,24 +274,11 @@
               <item name="user" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="sqls" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -572,6 +513,8 @@
       <workItem from="1558850861696" duration="5177000" />
       <workItem from="1558856804111" duration="11530000" />
       <workItem from="1558928652201" duration="2794000" />
+      <workItem from="1558943081859" duration="710000" />
+      <workItem from="1559027429884" duration="2286000" />
     </task>
     <task id="LOCAL-00001" summary="添加了部分代码，但是功能尚未完成">
       <created>1558360165714</created>
@@ -615,16 +558,23 @@
       <option name="project" value="LOCAL" />
       <updated>1558874572194</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="修复了不能再次点名的bug">
+      <created>1558943129986</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558943129986</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95082000" />
+    <option name="totallyTimeSpent" value="98078000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924812" visible="true" weight="0.18869936" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924812" visible="true" weight="0.19296375" />
       <window_info id="Structure" order="1" sideWeight="0.50075185" side_tool="true" weight="0.18017058" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -634,7 +584,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25568798" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25568798" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989339" weight="0.2383532" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -673,7 +623,8 @@
     <MESSAGE value="更新了数据库文件" />
     <MESSAGE value="实现了教师点名功能，学生提交验证码验证" />
     <MESSAGE value="初步完成所有功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="初步完成所有功能" />
+    <MESSAGE value="修复了不能再次点名的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了不能再次点名的bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -693,13 +644,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/student/queryById.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/common/model/Teacher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -973,30 +917,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="162" column="41" lean-forward="true" selection-start-line="162" selection-start-column="41" selection-end-line="162" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="48" column="36" lean-forward="true" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/shiro_base_auth.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/TeacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="38" column="50" lean-forward="true" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/TeacherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/impl/TeacherServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1750">
+          <caret line="93" column="32" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2129#2130#0" expanded="true" />
+            <element signature="e#2186#2187#0" expanded="true" />
+            <element signature="e#2377#2378#0" expanded="true" />
+            <element signature="e#2435#2436#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/impl/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/repo/org/springframework/spring-aop/4.2.5.RELEASE/spring-aop-4.2.5.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3550">
+          <caret line="173" selection-start-line="173" selection-end-line="173" />
         </state>
       </provider>
     </entry>
@@ -1028,48 +1000,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/TeacherService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+        <state relative-caret-position="511">
+          <caret line="87" column="84" lean-forward="true" selection-start-line="87" selection-start-column="84" selection-end-line="87" selection-end-column="84" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/impl/TeacherServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/core/shiro/token/manager/TokenManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1237">
-          <caret line="93" column="32" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2129#2130#0" expanded="true" />
-            <element signature="e#2186#2187#0" expanded="true" />
-            <element signature="e#2377#2378#0" expanded="true" />
-            <element signature="e#2435#2436#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="217">
+          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/repo/org/springframework/spring-aop/4.2.5.RELEASE/spring-aop-4.2.5.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/impl/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/TeacherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="52" column="19" lean-forward="true" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+        <state relative-caret-position="404">
+          <caret line="135" column="61" lean-forward="true" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
