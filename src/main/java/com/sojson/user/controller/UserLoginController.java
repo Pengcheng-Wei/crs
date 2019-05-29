@@ -131,13 +131,18 @@ public class UserLoginController extends BaseController {
 		Teacher teacher = null;
 		if (role.equals(role_student) ){
 			student = studentService.queryById(entity.getEmail());
+			if (student == null) {
+				resultMap.put("isExisted", false);
+				return resultMap;
+			}
+
 		}
 		else if (role.equals(role_teacher)){
 			teacher = teacherService.queryById(entity.getEmail());
-		}
-		if (student == null || teacher == null) {
-			resultMap.put("isExisted", false);
-			return resultMap;
+			if (teacher == null) {
+				resultMap.put("isExisted", false);
+				return resultMap;
+			}
 		}
 		try {
 			entity = TokenManager.login(entity, rememberMe);

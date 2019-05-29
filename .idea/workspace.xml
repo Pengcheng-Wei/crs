@@ -6,9 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dda7ef9-10e9-4b19-90ce-b9af2aa943b2" name="Default" comment="修复了不能再次点名的bug">
+    <list default="true" id="5dda7ef9-10e9-4b19-90ce-b9af2aa943b2" name="Default" comment="实现了账号不存在时不能绑定的功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sojson/user/controller/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sojson/user/controller/UserLoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/shiro.demo-0.0.2-SNAPSHOT/WEB-INF/classes/com/sojson/user/controller/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shiro.demo-0.0.2-SNAPSHOT/WEB-INF/classes/com/sojson/user/controller/UserLoginController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="135" column="61" lean-forward="true" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
+            <state relative-caret-position="362">
+              <caret line="142" column="50" lean-forward="true" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="87" column="84" lean-forward="true" selection-start-line="87" selection-start-column="84" selection-end-line="87" selection-end-column="84" />
+            <state relative-caret-position="975">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/core/shiro/token/manager/TokenManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
+            <state relative-caret-position="2050">
               <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
             </state>
           </provider>
@@ -198,7 +200,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="668" />
+    <option name="x" value="699" />
     <option name="y" value="-8" />
     <option name="width" value="983" />
     <option name="height" value="549" />
@@ -211,75 +213,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sojson" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sojson" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="sojson" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -514,7 +450,8 @@
       <workItem from="1558856804111" duration="11530000" />
       <workItem from="1558928652201" duration="2794000" />
       <workItem from="1558943081859" duration="710000" />
-      <workItem from="1559027429884" duration="2286000" />
+      <workItem from="1559027429884" duration="2953000" />
+      <workItem from="1559100925476" duration="1253000" />
     </task>
     <task id="LOCAL-00001" summary="添加了部分代码，但是功能尚未完成">
       <created>1558360165714</created>
@@ -565,16 +502,23 @@
       <option name="project" value="LOCAL" />
       <updated>1558943129986</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="实现了账号不存在时不能绑定的功能">
+      <created>1559033065241</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1559033065241</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98078000" />
+    <option name="totallyTimeSpent" value="99998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924812" visible="true" weight="0.19296375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924812" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="1" sideWeight="0.50075185" side_tool="true" weight="0.18017058" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -624,7 +568,8 @@
     <MESSAGE value="实现了教师点名功能，学生提交验证码验证" />
     <MESSAGE value="初步完成所有功能" />
     <MESSAGE value="修复了不能再次点名的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复了不能再次点名的bug" />
+    <MESSAGE value="实现了账号不存在时不能绑定的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了账号不存在时不能绑定的功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -944,6 +889,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="142" column="50" lean-forward="true" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/core/shiro/token/manager/TokenManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2050">
+          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/crs/service/impl/TeacherServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1750">
@@ -1002,25 +964,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="87" column="84" lean-forward="true" selection-start-line="87" selection-start-column="84" selection-end-line="87" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/core/shiro/token/manager/TokenManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/user/controller/UserLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="135" column="61" lean-forward="true" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
+        <state relative-caret-position="975">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
