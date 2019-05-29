@@ -81,8 +81,13 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public void updateResign(String sId, String tId) {
+    public boolean updateResign(String sId, String tId) {
+        if (teacherMapper.checkIsUpdated("t"+tId, sId) == 1){
+            return false;
+        }
+
         teacherMapper.updateResign(sId, "t"+tId);
+        return true;
     }
 
     @Override

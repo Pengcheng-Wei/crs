@@ -74,8 +74,11 @@ public class TeacherController {
 
     @RequestMapping(value = "updateResign")
     @ResponseBody
-    public void updateResign(String tId,String sId){
-        teacherService.updateResign(sId, tId);
+    public Map<String,Object> updateResign(String tId,String sId){
+        Map<String, Object> map = new HashMap<>();
+        boolean result = teacherService.updateResign(sId, tId);
+        map.put("result", result);
+        return map;
     }
 
     @RequestMapping(value = "finishCalling")

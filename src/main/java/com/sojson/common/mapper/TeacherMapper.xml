@@ -58,6 +58,10 @@
         UPDATE student, ${tableName} SET student.particiCnt = student.particiCnt+1 WHERE  ${tableName}.`sId` = student.`sId` AND  ${tableName}.`isChecked` = 0;
     </update>
 
+    <select id="checkIsUpdated" resultType="int">
+        select isChecked from ${tableName} where sId = '${sId}'
+    </select>
+
 
 
   

@@ -33,7 +33,7 @@ public interface TeacherService {
     int queryStudents(String tId);
     List<Student> checkResult(String tId);
 
-    void updateResign(String sId, String tId);
+    boolean updateResign(String sId, String tId);
     Teacher queryByOpenid(String openid);
 
     void updateParticiCnt(String tId);

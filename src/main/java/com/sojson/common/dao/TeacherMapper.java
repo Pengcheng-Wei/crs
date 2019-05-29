@@ -43,4 +43,6 @@ public interface TeacherMapper {
     int existTable(@Param(value = "tableName")String tableName);
 
     void updateParticiCnt(@Param(value = "tableName")String tableName);
+
+    int checkIsUpdated(@Param(value = "tableName")String tableName, @Param(value = "sId")String sId);
 }
