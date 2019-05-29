@@ -21,12 +21,12 @@ USE `crsdb`;
 DROP TABLE IF EXISTS `cour_class`;
 
 CREATE TABLE `cour_class` (
-  `cId` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '课程号',
-  `className` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '班级名称',
-  `cWeek` varchar(20) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '周几上该课',
-  `cSession` varchar(10) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '节次',
-  `tId` varchar(20) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '教师ID'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  `cId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT '课程号',
+  `className` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT '班级名称',
+  `cWeek` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT '周几上该课',
+  `cSession` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT '节次',
+  `tId` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT '教师ID'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `cour_class` */
 
@@ -62,7 +62,7 @@ CREATE TABLE `student` (
 
 /*Data for the table `student` */
 
-insert  into `student`(`sId`,`sName`,`className`,`sWechatId`,`particiCnt`) values ('2015101111','张飞','软件外包班',NULL,2),('2015101222','魏鹏程','物联网班','',0),('2015101333','关羽','软件外包班',NULL,0),('2015101444','赵云','软件外包班',NULL,0),('2015101555','诸葛亮','软件外包班',NULL,0),('2015101666','刘备','软件外包班',NULL,2);
+insert  into `student`(`sId`,`sName`,`className`,`sWechatId`,`particiCnt`) values ('2015101111','张飞','软件外包班',NULL,3),('2015101222','魏鹏程','物联网班','',0),('2015101333','关羽','软件外包班',NULL,1),('2015101444','赵云','软件外包班',NULL,1),('2015101555','诸葛亮','软件外包班','',0),('2015101666','刘备','软件外包班',NULL,2);
 
 /*Table structure for table `teacher` */
 
@@ -77,7 +77,7 @@ CREATE TABLE `teacher` (
 
 /*Data for the table `teacher` */
 
-insert  into `teacher`(`tId`,`tName`,`tWechatId`) values ('2010001','波涛','oZrVJ5ChGbaeWKeo_LdFwT4mh_h8'),('2010002','江河',NULL),('2010003','大海',NULL);
+insert  into `teacher`(`tId`,`tName`,`tWechatId`) values ('2010001','波涛',''),('2010002','江河',NULL),('2010003','大海',NULL);
 
 /*Table structure for table `u_permission` */
 
@@ -139,7 +139,7 @@ CREATE TABLE `u_user` (
 
 /*Data for the table `u_user` */
 
-insert  into `u_user`(`id`,`nickname`,`email`,`pswd`,`create_time`,`last_login_time`,`status`) values (1,'管理员','admin','admin','2016-06-16 11:15:33','2019-05-24 16:36:35',1),(11,'soso','8446666@qq.com','d57ffbe486910dd5b26d0167d034f9ad','2016-05-26 20:50:54','2016-06-16 11:24:35',1),(12,'8446666','8446666','4afdc875a67a55528c224ce088be2ab8','2016-05-27 22:34:19','2016-06-15 17:03:16',1),(13,'魏鹏程','2015101222','2015101222','2019-05-20 16:15:21','2019-05-26 17:54:39',1),(14,'波涛','2010001','2010001','2019-05-23 15:02:16','2019-05-26 19:34:17',1),(15,'江河','2010002','2010002','2019-05-23 17:11:59','2019-05-23 17:11:59',1),(16,'大海','2010003','2010003','2019-05-23 17:20:24','2019-05-23 17:20:24',1),(17,'张飞','2015101111','2015101111','2019-05-23 17:22:26','2019-05-23 17:22:26',1),(18,'关羽','2015101333','2015101333','2019-05-23 17:22:58','2019-05-23 17:22:58',1),(19,'赵云','2015101444','2015101444','2019-05-23 17:23:32','2019-05-23 17:23:32',1),(20,'诸葛亮','2015101555','2015101555','2019-05-23 17:24:05','2019-05-23 17:24:05',1),(21,'刘备','2015101666','2015101666','2019-05-23 17:24:40','2019-05-23 17:24:40',1);
+insert  into `u_user`(`id`,`nickname`,`email`,`pswd`,`create_time`,`last_login_time`,`status`) values (1,'管理员','admin','admin','2016-06-16 11:15:33','2019-05-24 16:36:35',1),(11,'soso','8446666@qq.com','d57ffbe486910dd5b26d0167d034f9ad','2016-05-26 20:50:54','2016-06-16 11:24:35',1),(12,'8446666','8446666','4afdc875a67a55528c224ce088be2ab8','2016-05-27 22:34:19','2016-06-15 17:03:16',1),(13,'魏鹏程','2015101222','2015101222','2019-05-20 16:15:21','2019-05-29 11:50:37',1),(14,'波涛','2010001','2010001','2019-05-23 15:02:16','2019-05-29 11:48:29',1),(15,'江河','2010002','2010002','2019-05-23 17:11:59','2019-05-23 17:11:59',1),(16,'大海','2010003','2010003','2019-05-23 17:20:24','2019-05-23 17:20:24',1),(17,'张飞','2015101111','2015101111','2019-05-23 17:22:26','2019-05-23 17:22:26',1),(18,'关羽','2015101333','2015101333','2019-05-23 17:22:58','2019-05-23 17:22:58',1),(19,'赵云','2015101444','2015101444','2019-05-23 17:23:32','2019-05-23 17:23:32',1),(20,'诸葛亮','2015101555','2015101555','2019-05-23 17:24:05','2019-05-29 11:50:12',1),(21,'刘备','2015101666','2015101666','2019-05-23 17:24:40','2019-05-23 17:24:40',1);
 
 /*Table structure for table `u_user_role` */
 
