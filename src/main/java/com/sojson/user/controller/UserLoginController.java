@@ -127,23 +127,26 @@ public class UserLoginController extends BaseController {
 	@RequestMapping(value="submitLogin",method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String,Object> submitLogin(UUser entity,Boolean rememberMe,HttpServletRequest request, String role, String openid){
-		Student student = null;
-		Teacher teacher = null;
-		if (role.equals(role_student) ){
-			student = studentService.queryById(entity.getEmail());
-			if (student == null) {
-				resultMap.put("isExisted", false);
-				return resultMap;
-			}
+		Student student;
+		Teacher teacher;
+		if(role != null){
+			if (role.equals(role_student) ){
+				student = studentService.queryById(entity.getEmail());
+				if (student == null) {
+					resultMap.put("isExisted", false);
+					return resultMap;
+				}
 
-		}
-		else if (role.equals(role_teacher)){
-			teacher = teacherService.queryById(entity.getEmail());
-			if (teacher == null) {
-				resultMap.put("isExisted", false);
-				return resultMap;
+			}
+			else if (role.equals(role_teacher)){
+				teacher = teacherService.queryById(entity.getEmail());
+				if (teacher == null) {
+					resultMap.put("isExisted", false);
+					return resultMap;
+				}
 			}
 		}
+
 		try {
 			entity = TokenManager.login(entity, rememberMe);
 
